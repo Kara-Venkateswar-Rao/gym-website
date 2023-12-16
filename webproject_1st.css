@@ -1,0 +1,395 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #ffff;
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#nav{
+    height: 120px;
+    width: 100%;
+    /* background-color: crimson; */
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 0 80px;
+    justify-content: flex-start;
+    z-index: 99;
+}
+
+#nav img{
+    height: 95px;
+
+}
+h4{
+    text-transform: uppercase;
+}
+#nav{
+    position: fixed;
+}
+#cursor{
+    height: 15px;
+    width: 15px;
+    background-color:  #8080809f ;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+}
+#cursorblr{
+    height: 300px;
+    width: 300px;
+    background-color: #8080809f;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(70px);
+    z-index: 1;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.589);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+#page1 h1::before{
+    content: "Eat. Workout. Sleep.";
+    position: absolute;
+    color: grey;
+    top: -3px;
+    left: -4px;
+    z-index: -1;
+    
+}
+#page1 h1{
+    font-size: 80px;
+    font-weight: 900;
+    position: relative;
+}
+#page1 h2{
+    font-size: 20px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#page1 p{
+    font-size: 15px;
+    font-weight: 550;
+    width: 40%;
+    font-family: 'Courier New', Courier, monospace;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow-y: hidden;
+    z-index: 1; 
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    z-index: 1;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 22s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+}
+
+#scroller h4{
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 50px;
+    font-weight: 550;
+    margin-right: 10px;
+    transition: all linear 0.5s;
+    color: transparent;
+    -webkit-text-stroke: 2px grey;
+    z-index: 1;
+}
+
+#scroller h4:hover{
+    color: grey;
+}
+
+@keyframes scroll {
+    from{
+        transform: translatex(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+
+#about-us{
+    height: 40vh;
+    width: 100%;
+    /* background-color: grey; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 50px;
+    
+}
+#about-us img{
+    border-radius: 10%;
+    object-fit: cover;
+}
+#about-us-in h3{
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+#about-us-in p{
+    font-size: 20px;
+    font-weight: 80;
+    line-height: 25px;
+}
+
+#cards-container{
+    /* background-color: powderblue; */
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    z-index: 1;
+    
+
+}
+.card{
+    height: 75%;
+    width: 20%;
+    /* background-color: black; */
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 1s;
+    z-index: 10;
+}
+#card1{
+    background-image: url(https://th.bing.com/th/id/OIP.GOiGH5VHzH1jOGcjQJFDQgHaEl?pid=ImgDet&rs=1);
+}
+#card2{
+    background-image: url(https://i.ytimg.com/vi/AzM_Ypg9RHk/maxresdefault.jpg);
+}
+#card3{
+    background-image: url(https://www.basic-fit.com/on/demandware.static/-/Library-Sites-basic-fit-shared-library/default/dw12cd98f1/Roots/Blog/Blog-Header/1088x612/18-01-Blog-Fitness-Information-personal-trainer.jpg);
+
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: lightgrey;
+    padding: 20px;
+    padding-top: 80px;
+    opacity: 0;
+}
+.overlay h3{
+    color: #000;
+    /* text-align: center; */
+    white-space: nowrap;
+}
+.overlay p{
+    color: #000;
+    /* text-align: center; */
+    margin-top: 15px;
+    font-size: 12px;
+    line-height: 2;
+}
+.card:hover .overlay{
+    opacity: 10;
+}
+
+ .card:hover{
+    transform: rotate3d(1,1,0,10deg);
+}
+#grey-div{
+    
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    background-color: grey;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, grey,lightgrey);
+}
+#grey-div h3{
+    width: 50%;
+    font-size: 25px;
+    text-transform: uppercase;
+    justify-content: center;
+    text-align: center;
+
+}
+#grey-div img{
+    height: 100%;
+    width: 10%;  
+    filter:grayscale(-10);    
+}
+
+#page3{
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    
+}
+#page3>p{
+    font-size: 17px;
+    font-weight: 700;
+    width: 50%;
+    line-height: 30px;
+    text-align: center
+}
+
+#page3 img{
+    position:absolute;
+    height: 50px;
+    
+} 
+#page3 #collon1{
+    left: 22%;
+    top: 32%;
+
+}
+#page3 #collon2{
+    bottom: 34%;
+    right: 22%;
+}
+#page4{
+    height: 50vh;
+    width: 100%;
+    /* background-color: chocolate; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+}
+
+.elam{
+    height: 45%;
+    width: 25%;
+    overflow: hidden;
+    border-radius: 20px;
+    position: relative;
+
+}
+
+.elam h2{
+    height: 100%;
+    width: 100%;
+    background-color: #bdbdbd;
+    display: flex;
+    color: #000;
+    font-weight: 800;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.6s;
+}
+.elam img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.elam:hover h2{
+    color: white;
+    background-color: transparent;
+    
+}
+
+#page4 h1{
+    font-size: 70px;
+    font-weight: 900;
+    color: transparent;
+    position: absolute;
+    top: 10%;
+    -webkit-text-stroke: 2px #a1a0a0;
+    z-index: 1;
+}
+#page4 h1:hover{
+    color: grey;
+}
+
+
+
+
+#footer{
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, grey, lightgrey);
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+#footer img{
+    height: 100%;
+    padding: 95px;
+    display:flex;
+}
+#footer .f1{
+    
+    padding: 10px;
+    color: black; 
+    margin-right: 10%;
+    line-height: 30px;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: all ease 0.5;
+    
+} 
+
+.f1 h4{
+    font-size: 20px;
+    font-weight: 900;
+    color: #000;
+}
+
+.f1 h4:hover{
+    color: white;
+}
+
+
